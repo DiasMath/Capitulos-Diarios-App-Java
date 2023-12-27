@@ -1,4 +1,6 @@
 package com.example.capitulosdiarios;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Context;
 import android.widget.Toast;
 
@@ -7,7 +9,8 @@ public class CalculadoraLeitura {
     public static String calcularLeitura(Context context, LivroNovoTestamento livro, int diasParaTerminar) {
         if (livro == null || diasParaTerminar <= 0 || diasParaTerminar > livro.getQuantidadeCapitulos()) {
             showToast(context, "Tente novamente.");
-            return "Selecione um livro e insira uma quantidade de dias válida.";
+            showAlertDialog(context, "Erro", "Selecione um livro e insira uma quantidade de dias válida.");
+            return "";
         }
 
         // Calcular a quantidade de capítulos por dia e arredondar para cima
@@ -25,14 +28,26 @@ public class CalculadoraLeitura {
         String nomeLivro = livro.getNome().replaceAll("-+\\s*\\d+$", "").trim();
 
         // Construir a mensagem final
-
-        return "Para ler " + nomeLivro + " em " + diasParaTerminar +
-                " dias, você precisa ler " + quantidadeCapitulosPorDia + " capítulo(s) por dia." + mensagemArredondamento;
+            showAlertDialog(context,"Resultado","Para ler " + nomeLivro + " em " + diasParaTerminar +
+                    " dias, você precisa ler " + quantidadeCapitulosPorDia + " capítulo(s) por dia." + mensagemArredondamento);
+        return "";
     }
 
     public static void showToast(Context context, String message) {
         // Exibir a Toast message
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+
+    public static void showAlertDialog(Context context, String title, String message) {
+        // Criar um AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(context,R.style.AlertDialogCustom);
+        builder.setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {}
+                }).setCancelable(false)
+                .show();
     }
 }
 
