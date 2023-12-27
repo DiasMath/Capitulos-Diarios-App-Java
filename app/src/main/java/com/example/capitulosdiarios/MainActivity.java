@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         spinnerLivros = findViewById(R.id.spinnerLivros);
         editTextDias = findViewById(R.id.editTextDias);
         buttonCalcular = findViewById(R.id.btnCalcular);
-        textViewResultado = findViewById(R.id.textResultado);
     }
 
     private void setupLivrosSpinner() {
