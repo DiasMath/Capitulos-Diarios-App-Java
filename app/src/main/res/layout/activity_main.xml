@@ -83,9 +83,10 @@
                 android:text="Calcular"
                 android:textStyle="bold"
                 android:textSize="18dp"
-                app:cornerRadius="20dp"
                 android:layout_marginTop="30dp"
-                android:fontFamily="serif"/>
+                android:fontFamily="serif"
+                android:textColor="@color/white"
+                android:background="@drawable/button_custom"/>
 
         </LinearLayout>
 

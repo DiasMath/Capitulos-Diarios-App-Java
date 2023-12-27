@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-
+    <!-- Tema SplashScreen -->
+    <style name="AppThemeSplash.Light" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/yellow_Splash</item>
+        <item name="android:colorPrimaryDark">@color/yellow_Splash</item>
     </style>
 
-    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <!-- Tema MainActivity -->
+    <style name="AppTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:colorPrimary">@color/pastel</item>
+        <item name="android:colorPrimaryDark">@color/pastel</item>
+        <item name="android:colorAccent">@color/pastel</item>
+    </style>
 
+    <!-- Alert Dialog -->
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorAccent">#f5c64e</item>
         <item name="android:windowBackground">@drawable/custom_background</item>
         <item name="android:buttonBarButtonStyle">@style/Button.Custom</item>
-
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">18dp</item>
         <item name="android:textStyle">bold</item>
-
         <item name="android:gravity">center</item>
-
     </style>
 
+    <!-- Button Dialog -->
     <style name="Button.Custom" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
-
-        <item name="android:textColor">#f5c64e</item>
-
+        <item name="android:textColor">@color/pastel</item>
     </style>
-
 </resources>
-
-
-
-
-
-
-
-
